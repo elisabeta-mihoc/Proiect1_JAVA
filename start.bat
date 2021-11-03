@@ -1,0 +1,1 @@
+"c:\lang\jdk\bin\appletviewer" Triunghi.htm
