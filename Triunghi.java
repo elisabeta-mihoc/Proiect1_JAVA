@@ -108,6 +108,8 @@ public class Triunghi extends Applet {
 			
 			imagine.setColor(Color.blue);
 			imagine.fillOval(centruCercC.x-3,centruCercC.y-3,6,6);
+			imagine.setColor(Color.black);
+			imagine.drawOval(centruCercC.x-3,centruCercC.y-3,6,6);
 			imagine.setColor(Color.blue);
 			imagine.drawOval(centruCercC.x-r,centruCercC.y-r,2*r,2*r);
 		}
@@ -120,6 +122,10 @@ public class Triunghi extends Applet {
 			imagine.fillOval(pctm[0].x-3,pctm[0].y-3,6,6);
 			imagine.fillOval(pctm[1].x-3,pctm[1].y-3,6,6);
 			imagine.fillOval(pctm[2].x-3,pctm[2].y-3,6,6);
+			imagine.setColor(Color.black);
+			imagine.drawOval(pctm[0].x-3,pctm[0].y-3,6,6);
+			imagine.drawOval(pctm[1].x-3,pctm[1].y-3,6,6);
+			imagine.drawOval(pctm[2].x-3,pctm[2].y-3,6,6);
 			imagine.setColor(Color.GRAY);
 			imagine.drawLine(cp[0].x,cp[0].y,pctm[0].x,pctm[0].y);
 			imagine.drawLine(cp[1].x,cp[1].y,pctm[1].x,pctm[1].y);
@@ -127,6 +133,8 @@ public class Triunghi extends Applet {
 			Point intersectieMediana=IntersectieMediana(cp[0],cp[1],cp[2]);
 			imagine.setColor(Color.red);
 			imagine.fillOval(intersectieMediana.x-3,intersectieMediana.y-3,6,6);
+			imagine.setColor(Color.black);
+			imagine.drawOval(intersectieMediana.x-3,intersectieMediana.y-3,6,6);
 			imagine.setColor(Color.black);
 			imagine.drawString(not[3],intersectieMediana.x+3,intersectieMediana.y+3);
 		}
@@ -139,6 +147,10 @@ public class Triunghi extends Applet {
 			imagine.fillOval(pctb[0].x-3,pctb[0].y-3,6,6);
 			imagine.fillOval(pctb[1].x-3,pctb[1].y-3,6,6);
 			imagine.fillOval(pctb[2].x-3,pctb[2].y-3,6,6);
+			imagine.setColor(Color.black);
+			imagine.drawOval(pctb[0].x-3,pctb[0].y-3,6,6);
+			imagine.drawOval(pctb[1].x-3,pctb[1].y-3,6,6);
+			imagine.drawOval(pctb[2].x-3,pctb[2].y-3,6,6);
 			imagine.setColor(Color.GRAY);
 			imagine.drawLine(cp[0].x,cp[0].y,pctb[0].x,pctb[0].y);
 			imagine.drawLine(cp[1].x,cp[1].y,pctb[1].x,pctb[1].y);
@@ -146,6 +158,8 @@ public class Triunghi extends Applet {
 			Point intersectieBisectoarea=IntersectieBiesectoarea(cp[0],cp[1],cp[2]);
 			imagine.setColor(Color.red);
 			imagine.fillOval(intersectieBisectoarea.x-3,intersectieBisectoarea.y-3,6,6);
+			imagine.setColor(Color.black);
+			imagine.drawOval(intersectieBisectoarea.x-3,intersectieBisectoarea.y-3,6,6);
 			imagine.setColor(Color.black);
 			imagine.drawString(not[5],intersectieBisectoarea.x+3,intersectieBisectoarea.y+3);
 		}
@@ -158,6 +172,10 @@ public class Triunghi extends Applet {
 			imagine.fillOval(pcti[0].x-3,pcti[0].y-3,6,6);
 			imagine.fillOval(pcti[1].x-3,pcti[1].y-3,6,6);
 			imagine.fillOval(pcti[2].x-3,pcti[2].y-3,6,6);
+			imagine.setColor(Color.black);
+			imagine.drawOval(pcti[0].x-3,pcti[0].y-3,6,6);
+			imagine.drawOval(pcti[1].x-3,pcti[1].y-3,6,6);
+			imagine.drawOval(pcti[2].x-3,pcti[2].y-3,6,6);
 			imagine.setColor(Color.GRAY);
 			imagine.drawLine(cp[0].x,cp[0].y,pcti[0].x,pcti[0].y);
 			imagine.drawLine(cp[1].x,cp[1].y,pcti[1].x,pcti[1].y);
@@ -165,6 +183,8 @@ public class Triunghi extends Applet {
 			Point intersecteazaInaltimea=IntersecteazaInaltimea(cp[0],cp[1],cp[2]);
 			imagine.setColor(Color.red);
 			imagine.fillOval(intersecteazaInaltimea.x-3,intersecteazaInaltimea.y-3,6,6);
+			imagine.setColor(Color.black);
+			imagine.drawOval(intersecteazaInaltimea.x-3,intersecteazaInaltimea.y-3,6,6);
 			imagine.setColor(Color.black);
 			imagine.drawString(not[4],intersecteazaInaltimea.x+3,intersecteazaInaltimea.y+3);
 		}
@@ -184,6 +204,8 @@ public class Triunghi extends Applet {
 			for(int i=0;i<nrpct;i++){
 				imagine.setColor(Color.magenta);
 				imagine.fillOval(cp[i].x-3,cp[i].y-3,6,6);
+				imagine.setColor(Color.black);
+				imagine.drawOval(cp[i].x-3,cp[i].y-3,6,6);
 				imagine.setColor(Color.black);
 				imagine.drawString(not[i],cp[i].x+3,cp[i].y+3);
 			}
@@ -327,70 +349,57 @@ public class Triunghi extends Applet {
 	}
 	
 	public double sin(double a, double b, double c){
-		double s=(Math.pow(b,2)+Math.pow(c,2)-Math.pow(a,2))/(2*b*c);
-		s=Math.sin(2*Math.acos(s));
+		double s=(Math.pow(b,2)+Math.pow(c,2)-Math.pow(a,2))/(2*b*c);//cosA
+		s=Math.sin(2*Math.acos(s));//sin2A
 		return s;
 	}
 	
 	public double getRaza(double a,double b,double c){
-		double s=(a*b*c)/(Math.sqrt((a+b+c)*(a+b-c)*(a-b+c)*(b+c-a)));
+		double s=(a*b*c)/(Math.sqrt((a+b+c)*(a+b-c)*(a-b+c)*(b+c-a)));//formula raza cerc circumscris triunghiului
 		return s;
 	}
 	
 	public Point mediana(Point v1,Point v2){
 		Point p=new Point ();
+		//caculam coordonatele mijlocului unui segment
 		p.x=(v1.x+v2.x)/2;
 		p.y=(v1.y+v2.y)/2;
 		return p;
 	}
 	
 	public double getPanta(Point v1, Point v2){
-		double m=(double )(v1.y-v2.y)/(double)(v1.x-v2.x);
+		double m=(double )(v1.y-v2.y)/(double)(v1.x-v2.x);//panta dreptei cand se cunosc doua puncte
 		return m;
-	}
-	
-	public double getDistBis(double b, double c, double a){
-		double x=0;
-		x=(a*b)/(b+c);
-		return x;
 	}
 	
 	public Point pctb(Point b, Point c, Point a){
 		Point pctb=new Point();
-		double panta=getPanta(b,c);
-		double lA=dist(b,c);
-		double lB=0;
-		double lC=0;
-		Point pctCurent=new Point();
-		if(b.x<=c.x){
-			lB=dist(a,b);
-			lC=dist(a,c);
-			pctCurent=b;
-		}
-		else{
-			lB=dist(a,c);
-			lC=dist(a,b);
-			pctCurent=c;
-		}
-		double distanta=getDistBis(lB,lC,lA);
-		pctb.x=(int) Math.round(pctCurent.x+distanta*Math.sqrt(1/(1+Math.pow(panta,2))));
-		pctb.y=(int) Math.round(pctCurent.y+panta*distanta*Math.sqrt(1/(1+Math.pow(panta,2))));
+		pctb.x=(int) Math.round((dist(b,a)*c.x+dist(c,a)*b.x)/(dist(b,a)+dist(c,a)));
+		pctb.y=(int) Math.round((dist(b,a)*c.y+dist(c,a)*b.y)/(dist(b,a)+dist(c,a)));
 		return pctb;
 	}
 	
 	public Point pcti(Point a, Point b, Point c){
 		Point pcti=new Point();
-		if(b.x>c.x){
-			Point retinPct=new Point();
-			retinPct=b;
-			b=c;
-			c=retinPct;
+		if(b.y!=c.y){
+			if(b.x>c.x){
+				Point retinPct=new Point();
+				retinPct=b;
+				b=c;
+				c=retinPct;
+			}
+			double pantaI=(-1.0)/getPanta(b,c);
+			double pantaB=getPanta(b,c);
+			pcti.x=(int) Math.round((b.y-a.y+pantaI*a.x-b.x*pantaB)/(pantaI-pantaB));//calculam coordonatele proiectiei varfului pe latura opusa; abscisa
+			pcti.y=(int) Math.round(a.y-pantaI*(a.x-pcti.x));//ordonata
 		}
-		double pantaI=(-1.0)/getPanta(b,c);
-		double pantaB=getPanta(b,c);
-		pcti.x=(int) Math.round((b.y-a.y+pantaI*a.x-b.x*pantaB)/(pantaI-pantaB));
-		pcti.y=(int) Math.round(a.y-pantaI*(a.x-pcti.x));
+		else{
+			pcti.x=a.x;
+			pcti.y=b.y;
+		}
+		
 		return pcti;
+		//avem o mica eroare in cazul in care pantaI se apropie de valoarea panteiB;eroarea vine din faptul ca atunci cand baza este orizontala in raport cu reperul inaltimea nu are panta
 	}
 	
 	public Point IntersectieMediana(Point a, Point b, Point c){
@@ -402,7 +411,7 @@ public class Triunghi extends Applet {
 	
 	public Point IntersectieBiesectoarea(Point a, Point b, Point c){
 		Point p=new Point();
-		p.x=(int) Math.round(((dist(b,c)*a.x+dist(a,c)*b.x+dist(a,b)*c.x)/(dist(b,c)+dist(a,c)+dist(a,b))));
+		p.x=(int) Math.round(((dist(b,c)*a.x+dist(a,c)*b.x+dist(a,b)*c.x)/(dist(b,c)+dist(a,c)+dist(a,b))));//folosim formula pentru coordonatele cercului inscris in triunghi
 		p.y=(int) Math.round(((dist(b,c)*a.y+dist(a,c)*b.y+dist(a,b)*c.y)/(dist(b,c)+dist(a,c)+dist(a,b))));
 		return p;
 	}
@@ -410,11 +419,23 @@ public class Triunghi extends Applet {
 	public Point IntersecteazaInaltimea(Point a, Point b, Point c){
 		Point p=new Point();
 		double pAB=getPanta(a,b);
-		double pCD=(-1.0)/pAB;
 		double pBC=getPanta(b,c);
-		double pAE=(-1.0)/pBC;
-		p.y=(int)Math.round(((pCD*a.y+pCD*pAE*c.x-pCD*pAE*a.x-pAE*c.y)/(pCD-pAE)));
-		p.x=(int)Math.round(((pCD*c.x-c.y+p.y)/(pCD)));
+		if(pAB!=0 && pBC!=0){
+			double pCD=(-1.0)/pAB;
+			double pAE=(-1.0)/pBC;
+			p.y=(int)Math.round(((pCD*a.y+pCD*pAE*c.x-pCD*pAE*a.x-pAE*c.y)/(pCD-pAE)));
+			p.x=(int)Math.round(((pCD*c.x-c.y+p.y)/(pCD)));
+		}
+		else if(pAB==0){
+			double pAE=(-1.0)/pBC;
+			p.x=c.x;
+			p.y=(int) Math.round(a.y+pAE*p.x-pAE*a.x);
+		}
+		else if(pBC==0){
+			double pCD=(-1.0)/pAB;
+			p.x=a.x;
+			p.y=(int) Math.round(c.y+pCD*p.x-pCD*c.x);
+		}
 		return p;
 	}
 	
