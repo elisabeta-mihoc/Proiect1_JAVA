@@ -1,10 +1,5 @@
 import java.applet.Applet;
-import java.awt.Button;
-import java.awt.Color;
-import java.awt.Event;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Point;
+import java.awt.*;
 
 public class Triunghi extends Applet {
 	Point[] cp;
